@@ -1,0 +1,127 @@
+{
+    "name": "Plant-for-the-Planet Website",
+    "description": "Bedrock WP Setup for Plant-for-the-Planet Website",
+    "keywords": [
+      "wordpress",
+      "cms",
+      "bedrock",
+      "boilerplate",
+      "composer"
+    ],
+    "website": "https://www.plant-for-the-planet.org",
+    "repository": "https://github.com/startplanting/startplanting",
+    "success_url": "/wp/wp-admin",
+    "scripts": {
+      "postdeploy": [
+        "bin/scripts/postdeploy.sh"
+      ]
+    },
+    "stack": "heroku-18",
+    "env": {
+      "AUTH_KEY": {
+        "description": "security token generated for WordPress",
+        "generator": "secret"
+      },
+      "SECURE_AUTH_KEY": {
+        "description": "security token generated for WordPress",
+        "generator": "secret"
+      },
+      "LOGGED_IN_KEY": {
+        "description": "security token generated for WordPress",
+        "generator": "secret"
+      },
+      "NONCE_KEY": {
+        "description": "security token generated for WordPress",
+        "generator": "secret"
+      },
+      "AUTH_SALT": {
+        "description": "security token generated for WordPress",
+        "generator": "secret"
+      },
+      "SECURE_AUTH_SALT": {
+        "description": "security token generated for WordPress",
+        "generator": "secret"
+      },
+      "LOGGED_IN_SALT": {
+        "description": "security token generated for WordPress",
+        "generator": "secret"
+      },
+      "NONCE_SALT": {
+        "description": "security token generated for WordPress",
+        "generator": "secret"
+      },
+      "WP_HOME": {
+        "required": false,
+        "description": "App URL"
+      },
+        "DATABASE_URL": {
+        "required": false,
+        "description": "DATABASE URL"
+      },
+        "WP_SITEURL": {
+        "required": false,
+        "description": "HOME_URL/wp"
+      },
+      "S3_API_KEY": {
+          "required": false,
+          "description": "s3 details"
+        },
+        "S3_API_SECRET": {
+          "required": false,
+          "description": "s3 details"
+        },
+        "S3_BUCKET_NAME": {
+          "required": false,
+          "description": "s3 details"
+        },
+        "S3_REGION": {
+          "required": false,
+          "description": "s3 details"
+        },
+        "S3_BUCKET_URL_FORMAT": {
+            "required": false,
+            "description": "s3 details"
+          },
+        "S3_CLOUDFRONT": {
+            "required": false,
+            "description": "s3 details"
+          },
+        "S3_OBJECT_PREFIX": {
+            "required": false,
+            "description": "s3 details"
+          },
+        "WP_ENV": {
+          "required": false,
+          "description": "wordpress env, default production"
+        },
+        "SES_AWS_ACCESS_KEY_ID": {
+            "required": false,
+            "description": "AWS SES Configuration"
+          },
+        "SES_AWS_SECRET_ACCESS_KEY": {
+            "required": false,
+            "description": "AWS SES Configuration"
+          },
+        "SES_LICENCE": {
+            "required": false,
+            "description": "AWS SES Configuration"
+          }
+    },
+    "formation": {
+      "web": {
+        "quantity": 1,
+        "size": "free"
+      }
+    },
+    "addons": [
+      {
+        "plan": "papertrail:choklad"
+      }
+    ],
+    "buildpacks": [
+      {
+        "url": "https://github.com/heroku/heroku-buildpack-php"
+      }
+    ]
+}
+  
