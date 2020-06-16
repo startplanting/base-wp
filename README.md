@@ -1,4 +1,4 @@
-# [Plant-for-the-Planet Foundation](https://www.plant-for-the-planet.org/)
+# [Wordpress Base Template](https://www.plant-for-the-planet.org/)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/startplanting/startplanting)
 
